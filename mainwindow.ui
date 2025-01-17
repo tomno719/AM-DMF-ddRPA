@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>943</width>
+    <height>997</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>11</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>PathPlanning</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="CustomWidget" name="widget" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>471</width>
+         <height>531</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QTabWidget" name="tabWidget">
+       <property name="minimumSize">
+        <size>
+         <width>400</width>
+         <height>752</height>
+        </size>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="tab_2">
+        <attribute name="title">
+         <string>路径规划</string>
+        </attribute>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>371</width>
+           <height>331</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="minimumSize">
+                 <size>
+                  <width>51</width>
+                  <height>21</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>拖动间隔</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="spInterval">
+                <property name="minimumSize">
+                 <size>
+                  <width>161</width>
+                  <height>21</height>
+                 </size>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="minimumSize">
+                 <size>
+                  <width>51</width>
+                  <height>21</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>体积</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="spVolume">
+                <property name="minimumSize">
+                 <size>
+                  <width>161</width>
+                  <height>21</height>
+                 </size>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <item>
+               <widget class="QLabel" name="label_5">
+                <property name="minimumSize">
+                 <size>
+                  <width>51</width>
+                  <height>21</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>安全距离</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="spSafeDistance">
+                <property name="minimumSize">
+                 <size>
+                  <width>161</width>
+                  <height>21</height>
+                 </size>
+                </property>
+                <property name="minimum">
+                 <number>1</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QPushButton" name="pbExportMap">
+              <property name="minimumSize">
+               <size>
+                <width>221</width>
+                <height>31</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>导入地图</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pbInputMap">
+              <property name="minimumSize">
+               <size>
+                <width>221</width>
+                <height>31</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>导出地图</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pbPahtPlanning">
+              <property name="minimumSize">
+               <size>
+                <width>221</width>
+                <height>31</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>规划路径</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QLabel" name="label_3">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>380</y>
+           <width>91</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>起点数量</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="labStartsNum">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>380</y>
+           <width>61</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_6">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>430</y>
+           <width>91</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>终点数量</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="labEndsNum">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>430</y>
+           <width>61</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_7">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>480</y>
+           <width>141</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>规划用时(ms)</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="labPlanTime">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>480</y>
+           <width>121</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="ckbStartOrderByX">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>540</y>
+           <width>151</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>X 升序</string>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="ckbStartOrderByY">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>540</y>
+           <width>151</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Y 升序</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pbLastStep">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>610</y>
+           <width>101</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>上一帧</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pbNextStep">
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>610</y>
+           <width>101</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>下一帧</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pbStartSimulation">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>670</y>
+           <width>101</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>开始</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pbStopSimulation">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>120</x>
+           <y>670</y>
+           <width>101</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>暂停</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pbResetSimulation">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>670</y>
+           <width>101</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>重置</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_4">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>520</y>
+           <width>131</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>起点</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_8">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>560</y>
+           <width>131</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>终点</string>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="ckbGoalOrderByX">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>580</y>
+           <width>151</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>X 升序</string>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+        <widget class="QCheckBox" name="ckbGoalOrderByY">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>580</y>
+           <width>151</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Y 升序</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_9">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>390</y>
+           <width>61</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>当前X</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_10">
+         <property name="geometry">
+          <rect>
+           <x>220</x>
+           <y>450</y>
+           <width>61</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>当前Y</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="labCurrentX">
+         <property name="geometry">
+          <rect>
+           <x>300</x>
+           <y>390</y>
+           <width>71</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="labCurrentY">
+         <property name="geometry">
+          <rect>
+           <x>300</x>
+           <y>450</y>
+           <width>71</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>0</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pbInsertVideo1GoalObs">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>750</y>
+           <width>311</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>插入Video1障碍点</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pbInsertVideo2GoalObs">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>820</y>
+           <width>311</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>插入Video2障碍点</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pbInsertVideo3GoalObs">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>890</y>
+           <width>311</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>插入Video3障碍点</string>
+         </property>
+        </widget>
+        <widget class="QSpinBox" name="spCurrentStepIndex">
+         <property name="geometry">
+          <rect>
+           <x>240</x>
+           <y>610</y>
+           <width>141</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="maximum">
+          <number>1000000</number>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CustomWidget</class>
+   <extends>QWidget</extends>
+   <header>customwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pbStartSimulation</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>pbStartSimulationClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>596</x>
+     <y>734</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>520</x>
+     <y>776</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbResetSimulation</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>pbResetSimulationClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>830</x>
+     <y>713</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>864</x>
+     <y>773</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbLastStep</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>pbLastStepClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>595</x>
+     <y>679</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>623</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spInterval</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>spIntervalChange(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>780</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>795</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbExportMap</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>pbImportMapClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>793</x>
+     <y>247</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>765</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbNextStep</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>pbNextStepClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>709</x>
+     <y>675</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>348</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbStopSimulation</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>pbStopSimulationClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>694</x>
+     <y>715</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>712</x>
+     <y>772</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbInputMap</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>pbExportMapClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>738</x>
+     <y>301</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>736</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbPahtPlanning</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>pbPathPlanningClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>737</x>
+     <y>344</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>523</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbInsertVideo1GoalObs</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>pbInsertVideo1GoalObsClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>754</x>
+     <y>797</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>940</x>
+     <y>815</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbInsertVideo2GoalObs</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>pbInsertVideo2GoalObsClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>829</x>
+     <y>869</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>942</x>
+     <y>867</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbInsertVideo3GoalObs</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>pbInsertVideo3GoalObsClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>779</x>
+     <y>958</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>939</x>
+     <y>940</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spVolume</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>npdAgentSizeChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>879</x>
+     <y>140</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>939</x>
+     <y>154</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spSafeDistance</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>spSafeDistanceChange(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>863</x>
+     <y>190</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>942</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spCurrentStepIndex</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>spCurrentStepIndexChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>845</x>
+     <y>657</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>942</x>
+     <y>659</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>spIntervalChange(int)</slot>
+  <slot>spVolumeChange(int)</slot>
+  <slot>spSafeDistanceChange(int)</slot>
+  <slot>pbImportMapClick()</slot>
+  <slot>pbExportMapClick()</slot>
+  <slot>pbPathPlanningClick()</slot>
+  <slot>pbLastStepClick()</slot>
+  <slot>pbNextStepClick()</slot>
+  <slot>pbStartSimulationClick()</slot>
+  <slot>pbStopSimulationClick()</slot>
+  <slot>pbResetSimulationClick()</slot>
+  <slot>pbInsertVideo1GoalObsClick()</slot>
+  <slot>pbInsertVideo2GoalObsClick()</slot>
+  <slot>pbInsertVideo3GoalObsClick()</slot>
+  <slot>npdAgentSizeChanged(int)</slot>
+  <slot>spCurrentStepIndexChanged(int)</slot>
+ </slots>
+</ui>
